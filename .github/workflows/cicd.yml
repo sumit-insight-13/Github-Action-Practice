@@ -1,0 +1,29 @@
+name: CICD
+
+on: workflow_dispatch
+
+
+jobs:
+  code:
+    runs-on: ubuntu-22.04-arm
+    steps:
+      - name: Clone the code
+        run: echo "cloning the code"
+
+  build:
+    runs-on: ubuntu-22.04-arm
+    steps:
+      - name: build using docker
+        run: echo"building using docker"
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: running test cases
+        run: echo "tetsing the app"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploying on the machine
+        run: echo "deploying"
